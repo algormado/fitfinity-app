@@ -1,24 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AppRouter from '. /Components/Registration/AppRouter.jsx';
+import Navigation from '. /Components/Registration/Navigation.jsx';
 import ImageSlider from './Components/ImageSlider/ImageSlider.jsx';
 import WorkoutPlanList from './Components/WorkoutPlanList/WorkoutPlanList.jsx';
-import AppRouter from './Components/Registration/AppRouter';
-import Navigation from './Components/Registration/Navigation.jsx';
+import WorkoutPlanDetails from './Components/WorkoutPlanDetails/WorkoutPlanDetails.jsx';
 
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div>
-        <ImageSlider/>
-        <WorkoutPlanList/>
-        <Navigation />
-        <AppRouter />
+      <div className='App'>
+        <ImageSlider />
+        <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
+          My Exercise Plan
+        </h1>
+        <hr className='mx-auto w-auto' style={{borderTop:'3px dotted #f04c0c', width:'220px'}} />
+        <Routes>
+          < AppRouter />
+          < Navigation />
+          <Route path='/' element={<WorkoutPlanList />} />
+          <Route path='/workout/:id' element={<WorkoutPlanDetails />} />
+        </Routes>
       </div>
     </Router>
-
   );
-};
-
+}
 
 export default App;
