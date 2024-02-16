@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route, Router } from 'react-router-dom';
-import ImageSlider from '../Components/ImageSlider/ImageSlider.jsx';
-import WorkoutPlanList from '../Components/WorkoutPlanList/WorkoutPlanList.jsx';
-import WorkoutPlanDetails from '../Components/WorkoutPlanDetails/WorkoutPlanDetails.jsx';
-import ProgressTracker from '../components/ProgressTracker';
-import ExerciseTracker from '../components/ExerciseTracker';
+import ImageSlider from '../ImageSlider/ImageSlider.jsx';
+import WorkoutPlanList from '../WorkoutPlanList/WorkoutPlanList.jsx';
+import WorkoutPlanDetails from '../WorkoutPlanDetails/WorkoutPlanDetails.jsx';
+import ProgressTracker from '../ProgressTracker';
+import ExerciseTracker from '../ExerciseTracker';
 
 
 const Dashboard = () => {
