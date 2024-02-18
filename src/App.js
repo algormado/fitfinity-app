@@ -18,28 +18,44 @@ const App = () => {
         <Navigation />
         <AppRouter />
       </div>
-      <div style={{ marginLeft: "75%" }}>
+      <div style={{ marginLeft: '75%' }}>
         <h1>Reminders!</h1>
         <Reminder />
       </div>
-      <Link to="/fittype">
-          <button style={{ Top: '0', marginLeft: '10%', zIndex: 999 }}>Go to FitType</button>
+      <div className='mb-3'>
+        <Link to='/fittype'>
+          <button style={{ Top: '0', marginLeft: '10%', zIndex: 999 }}>
+            Go to FitType
+          </button>
         </Link>
+        <Link to='/Progress-Tracker'>
+          <button style={{ Top: '0', marginLeft: '10%', zIndex: 999 }}>
+            Progress-Tracker
+          </button>
+        </Link>
+        <Link to='/Exercise-tracker'>
+          <button style={{ Top: '0', marginLeft: '10%', zIndex: 999 }}>
+            Exercise-Tracker
+          </button>
+        </Link>
+      </div>
       <div className='App'>
         <ImageSlider />
         <h1 className='text-4xl font-bold text-center mt-12 mb-3'>
           My Exercise Plan
         </h1>
-        <hr className='mx-auto w-auto' style={{ borderTop: '3px dotted #f04c0c', width: '220px' }} />
+        <hr
+          className='mx-auto w-auto'
+          style={{ borderTop: '3px dotted #f04c0c', width: '220px' }}
+        />
         <Routes>
           <Route path='/' element={<WorkoutPlanList />} />
-          <Route path='/workoutplans/:id' element={<WorkoutPlanDetails />} />
+          <Route path='/workout/:id' element={<WorkoutPlanDetails />} />
+          <Route path='/fittype' element={<FitType />} />
+          <Route path='/Progress-tracker' element={<ProgressTracker />} />
+          <Route path='/Exercise-tracker' element={<ExerciseTracker />} />
         </Routes>
-        <Routes>
-          <Route path="/fittype" element={<FitType />} />
-        </Routes>
-        <ProgressTracker />
-        <ExerciseTracker />
+        <Routes></Routes>
       </div>
     </Router>
   );
